@@ -3,4 +3,6 @@
     <string name="users">Users</string>
     <string name="user_id">"User ID : "</string>
     <string name="username">"User Name : "</string>
+    <string name="full_name">"Full Name : "</string>
+    <string name="email">"Email : "</string>
 </resources>

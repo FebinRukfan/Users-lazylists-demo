@@ -4,17 +4,24 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeContentPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Badge
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -26,6 +33,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -106,15 +114,54 @@ fun UserItem(modifier: Modifier = Modifier, user: users, index: Int, onItemClick
             .padding(horizontal = 12.dp, vertical = 8.dp)
             .fillMaxWidth()
     ) {
+
         Row(
             modifier = Modifier
+                .background(MaterialTheme.colorScheme.primary)
                 .fillMaxWidth()
                 .padding(horizontal = 8.dp)
-                .padding(top = 8.dp), horizontalArrangement = Arrangement.SpaceBetween
+                .padding(bottom = 8.dp), horizontalArrangement = Arrangement.SpaceBetween
+
         ) {
-            Text(modifier = Modifier, text = stringResource(id = R.string.user_id) + " ${user.userId}")
-            Text(modifier = Modifier, text = stringResource(id = R.string.username) + " ${user.username}")
+            Column(
+                horizontalAlignment = Alignment.Start) {
+                Text(style = TextStyle(
+                    color = Color.White
+                ), text = stringResource(id = R.string.user_id) + " ${user.userId}")
+                Text(style = TextStyle(
+                    color = Color.White
+                ),text = stringResource(id = R.string.username) + " ${user.username}")
+                Text(style = TextStyle(
+                    color = Color.White
+                ),text = stringResource(id = R.string.full_name) + " ${user.fullName}")
+                Text(style = TextStyle(
+                    color = Color.White
+                ),text = stringResource(id = R.string.email) + " ${user.email}")
+            }
+
+            Box(
+                modifier = Modifier
+                    .padding(top = 4.dp)
+                    .background(color = Color.Black, shape = CircleShape)
+                    .padding(3.dp)
+            ) {
+                Badge(
+                    contentColor = Color.Black,
+                    containerColor = Color.White
+                ) {
+                    Text(
+                        modifier = Modifier
+                            .padding(4.dp),
+                        text = "${index + 1}",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 14.sp
+                    )
+                }
+            }
+
         }
+
+
 
     }
 }

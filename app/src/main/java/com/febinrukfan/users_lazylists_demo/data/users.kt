@@ -25,7 +25,7 @@ val generator = generateSequence {
 }
 
 fun generateUsernames(limit: Int): String {
-    val nameLength = Random.nextInt(1, limit + 1)
+    val nameLength = Random.nextInt(4, limit + 1)
     val nameBuilder = StringBuilder(nameLength)
     repeat(nameLength) {
         val letter = ('a'..'z').filter { it.isLetter() }.random()
@@ -39,8 +39,7 @@ fun generateFullNames(limit: Int): String {
     repeat(limit) {
         val char = when (Random.nextInt(3)) {
             0 -> ('a'..'z')
-            1 -> ('A'..'Z')
-            else -> ('0'..'9')
+            else -> ('A'..'Z')
         }.filter { it.isLetterOrDigit() }.random()
         usernameBuilder.append(char)
     }
