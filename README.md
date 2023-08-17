@@ -25,7 +25,6 @@ item. ✅
 message should appear with message "User deleted". ✅
 8. You must use Jetpack Compose to build the UI. ✅
 
-
-![Assignment 1]
-(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwNGY5eHQyODBwMHY5OXUzY2N5Yml5dTNqMnNjN3lpb3I0a294aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EhGA0Ql7ZAi2ARkp62/giphy.gif)
+# Video
+![Assignment 2](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwNGY5eHQyODBwMHY5OXUzY2N5Yml5dTNqMnNjN3lpb3I0a294aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EhGA0Ql7ZAi2ARkp62/giphy.gif)
 
